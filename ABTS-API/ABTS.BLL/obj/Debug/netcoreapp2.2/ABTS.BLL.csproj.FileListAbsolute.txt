@@ -1,0 +1,14 @@
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.BLL.deps.json
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.BLL.dll
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.BLL.pdb
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.DAL.dll
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.Entities.dll
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.DAL.pdb
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\bin\Debug\netcoreapp2.2\ABTS.Entities.pdb
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.csprojAssemblyReference.cache
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.csproj.CoreCompileInputs.cache
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.AssemblyInfoInputs.cache
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.AssemblyInfo.cs
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.csproj.CopyComplete
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.dll
+C:\Users\baris\source\repos\ABTS\ABTS.BLL\obj\Debug\netcoreapp2.2\ABTS.BLL.pdb
