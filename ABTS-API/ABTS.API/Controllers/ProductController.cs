@@ -19,7 +19,11 @@ namespace ABTS.API.Controllers
         {
             this._productManager = _productManager;
         }
-
+        /// <summary>
+        /// Get products related to given conditions.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Products>>> GetProductList([FromBody]ProductListModel model)
         {

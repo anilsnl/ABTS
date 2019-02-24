@@ -17,18 +17,21 @@ namespace ABTS.API.Controllers
         private readonly ICategoryManager _categoryManager;
         private readonly ISupplierManager _supplierManager;
         private readonly IElasticSearchService _elasticSearch;
+        private readonly IProductElasticService _productElasticService;
 
-
-        public SearchController(IProductManager _productManager, IElasticSearchService _elasticSearch, ICategoryManager _categoryManager, ISupplierManager _supplierManager)
+        public SearchController(IProductManager _productManager, 
+            IElasticSearchService _elasticSearch, ICategoryManager _categoryManager, ISupplierManager _supplierManager,
+            IProductElasticService _productElasticService)
         {
             this._productManager = _productManager;
             this._categoryManager = _categoryManager;
             this._supplierManager = _supplierManager;
             this._elasticSearch = _elasticSearch;
+            this._productElasticService = _productElasticService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<string>> GetProductList()
+        public async Task<ActionResult<string>> Configure()
         {
             var products = await _productManager.GetListAsync().Result.ToListAsync();
             var categories = await _categoryManager.GetListAsync().Result.ToListAsync();
@@ -38,18 +41,18 @@ namespace ABTS.API.Controllers
             return Ok("Created");
         }
 
-        //[HttpGet("{key}")]
-        //public async Task<ActionResult<IEnumerable<ProductSchema>>> GetProductByName(string key)
-        //{
-        //    var response = await _elasticSearch.GetProductsByName(key);
-        //    if (response != null && response.Count() > 0)
-        //    {
-        //        return Ok(response);
-        //    }
-        //    else
-        //    {
-        //        return NotFound("Could not be found");
-        //    }
-        //}
+        [HttpGet("{key}")]
+        public async Task<ActionResult<IEnumerable<ProductSchema>>> GetProductByName(string key)
+        {
+            var response = await _productElasticService.GetProductsByName(key);
+            if (response != null && response.Any())
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return NotFound("Could not be found");
+            }
+        }
     }
 }
