@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ABTS.API.Models;
 using ABTS.BLL.Abstract;
-using ABTS.Entities.Concerete;
+using ABTS.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

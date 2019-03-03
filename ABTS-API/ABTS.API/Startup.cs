@@ -1,9 +1,11 @@
 ﻿using ABTS.BLL.Abstract;
-using ABTS.BLL.Concerete;
+using ABTS.BLL.Concrete;
 using ABTS.DAL.Abstract;
-using ABTS.DAL.Concerete.EF;
+using ABTS.DAL.Concrete.EF;
 using ABTS.ElasticService.Abstract;
-using ABTS.ElasticService.Concerete;
+using ABTS.ElasticService.Concrete;
+using ABTS.RedisService.Abstract;
+using ABTS.RedisService.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +36,8 @@ namespace ABTS.API
             services.AddScoped<ICategoryManager, CategoryManager>();
             services.AddScoped<IElasticSearchService, ElasticSearchService>();
             services.AddScoped<IProductElasticService, ProductElasticService>();
-
+            services.AddScoped<IRedisService, RedisService.Concrete.RedisService>();
+            services.AddSingleton<IRedisConnectionFactory, RedisConnectionFactory>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -1,4 +1,4 @@
-﻿using ABTS.Entities.Concerete;
+﻿using ABTS.Entities.Concrete;
 using System.Linq;
 
 namespace ABTS.DAL.Abstract

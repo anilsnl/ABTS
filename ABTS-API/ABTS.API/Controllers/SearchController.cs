@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ABTS.RedisService.Abstract;
 
 namespace ABTS.API.Controllers
 {
@@ -18,16 +19,18 @@ namespace ABTS.API.Controllers
         private readonly ISupplierManager _supplierManager;
         private readonly IElasticSearchService _elasticSearch;
         private readonly IProductElasticService _productElasticService;
-
+        private IRedisService _redisService;
         public SearchController(IProductManager _productManager, 
             IElasticSearchService _elasticSearch, ICategoryManager _categoryManager, ISupplierManager _supplierManager,
-            IProductElasticService _productElasticService)
+            IProductElasticService _productElasticService,
+            IRedisService redisService)
         {
             this._productManager = _productManager;
             this._categoryManager = _categoryManager;
             this._supplierManager = _supplierManager;
             this._elasticSearch = _elasticSearch;
             this._productElasticService = _productElasticService;
+            this._redisService = redisService;
         }
 
         [HttpGet]
@@ -44,7 +47,9 @@ namespace ABTS.API.Controllers
         [HttpGet("{key}")]
         public async Task<ActionResult<IEnumerable<ProductSchema>>> GetProductByName(string key)
         {
-            var response = await _productElasticService.GetProductsByName(key);
+
+            var response =
+                await _redisService.GetAndSetAsync(key, () => { return _productElasticService.GetProductsByName(key); });
             if (response != null && response.Any())
             {
                 return Ok(response);
