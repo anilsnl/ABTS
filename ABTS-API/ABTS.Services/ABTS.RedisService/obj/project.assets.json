@@ -231,7 +231,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -240,23 +240,24 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Pipelines.Sockets.Unofficial/1.0.7": {
+      "Pipelines.Sockets.Unofficial/2.0.22": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
-          "System.IO.Pipelines": "4.5.1"
+          "System.IO.Pipelines": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "compile": {
-          "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll": {}
         }
       },
-      "StackExchange.Redis/2.0.519": {
+      "StackExchange.Redis/2.0.601": {
         "type": "package",
         "dependencies": {
-          "Pipelines.Sockets.Unofficial": "1.0.7",
+          "Pipelines.Sockets.Unofficial": "2.0.22",
           "System.Diagnostics.PerformanceCounter": "4.5.0",
           "System.IO.Pipelines": "4.5.1",
           "System.Threading.Channels": "4.5.0"
@@ -318,6 +319,15 @@
         },
         "runtime": {
           "lib/netcoreapp2.1/System.IO.Pipelines.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "System.Security.AccessControl/4.5.0": {
@@ -741,7 +751,7 @@
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
-      "sha512": "vduxuHEqRgRrTE8wYG8Wxj/+6wwzddOmZzjKZx6rFMc/91aUBxI5etAFYxesoNaIja5NpgSTcnk6cN8BeYXf9A==",
+      "sha512": "+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "type": "package",
       "path": "microsoft.win32.registry/4.5.0",
       "files": [
@@ -908,49 +918,40 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.1",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.pdb",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.pdb",
         "lib/net35/Newtonsoft.Json.xml",
         "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.pdb",
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.pdb",
         "lib/net45/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.pdb",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.pdb",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.pdb",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
-    "Pipelines.Sockets.Unofficial/1.0.7": {
-      "sha512": "n+YKaKVd9ZSa7uVeT0gyOT8eoeCWbiTdpVtnHkjthqmNopVPc4+efRQUReO+WH3WFyVKxgn5QS4BLi2Q+sioqA==",
+    "Pipelines.Sockets.Unofficial/2.0.22": {
+      "sha512": "KBrLHtOjnSSgVtNLA3FPxR8+/7+NOjo3CDtUKDKlvFvGiE+x82pEzOgf4J/dRePlTVCaLQzfjssqom6GegNiPg==",
       "type": "package",
-      "path": "pipelines.sockets.unofficial/1.0.7",
+      "path": "pipelines.sockets.unofficial/2.0.22",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -960,16 +961,20 @@
         "lib/net472/Pipelines.Sockets.Unofficial.xml",
         "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll",
         "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.xml",
+        "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll",
+        "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.xml",
+        "lib/netcoreapp3.0/Pipelines.Sockets.Unofficial.dll",
+        "lib/netcoreapp3.0/Pipelines.Sockets.Unofficial.xml",
         "lib/netstandard2.0/Pipelines.Sockets.Unofficial.dll",
         "lib/netstandard2.0/Pipelines.Sockets.Unofficial.xml",
-        "pipelines.sockets.unofficial.1.0.7.nupkg.sha512",
+        "pipelines.sockets.unofficial.2.0.22.nupkg.sha512",
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "StackExchange.Redis/2.0.519": {
-      "sha512": "8+2UwZ5/xBzU0OxM/Rs273VXY9G1oFFM4WrHzF4BZQBbFqyJRM5Sj32zZSj9xJT9mPel2escaYEwKjfDUAgieQ==",
+    "StackExchange.Redis/2.0.601": {
+      "sha512": "aEZQui10BTYL787+GCRlcT5qZe4ioyU2NKIO20ppDFbWE9bUuQLIq2FWQyvVcD+e/a88JFusT77KaQ8C7UDP9g==",
       "type": "package",
-      "path": "stackexchange.redis/2.0.519",
+      "path": "stackexchange.redis/2.0.601",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -979,12 +984,12 @@
         "lib/net472/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.0.519.nupkg.sha512",
+        "stackexchange.redis.2.0.601.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
     "System.Buffers/4.4.0": {
-      "sha512": "Ii2bedd4HVzddupdU35n3ygohUPlNn7MDimBOYcwWNce2NizQ1fCSaQJY1Tzv80aMqOGpVcU4wZr/Xe50xcTwg==",
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
       "type": "package",
       "path": "system.buffers/4.4.0",
       "files": [
@@ -1085,8 +1090,33 @@
         "version.txt"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.AccessControl/4.5.0": {
-      "sha512": "6RQtcT+TyDgLUFsAnmmdfRRGdLYKxSZGkSPOd052tvYFxOTMaQb6ANlwhGqZtNO52PosaCoXu7uatFneujAxmA==",
+      "sha512": "vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
       "type": "package",
       "path": "system.security.accesscontrol/4.5.0",
       "files": [
@@ -1169,7 +1199,7 @@
       ]
     },
     "System.Security.Permissions/4.5.0": {
-      "sha512": "vDQ7q30Soe0a1cPhvxn+7IFmMeTG5IP+hTQrnKQDjTNpD2epqwbZSzMM2Git5TXBr4Kwwhc/0SEtJY0qPoiegA==",
+      "sha512": "9gdyuARhUR7H+p5CjyUB/zPk7/Xut3wUSP8NJQB6iZr8L3XUXTMdoLeVAg9N4rqF8oIpE7MpdqHdDHQ7XgJe0g==",
       "type": "package",
       "path": "system.security.permissions/4.5.0",
       "files": [
@@ -1190,7 +1220,7 @@
       ]
     },
     "System.Security.Principal.Windows/4.5.0": {
-      "sha512": "hs2zF4tOQ3V4iQttVnLrnR/i8AOrrAgu2Gmp4/jNaE/+5hiZWDj20FK/m/OW3Itdi9XDvqf55WzHkiWYtOSUNg==",
+      "sha512": "U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
       "type": "package",
       "path": "system.security.principal.windows/4.5.0",
       "files": [
@@ -1233,7 +1263,7 @@
       ]
     },
     "System.Threading.Channels/4.5.0": {
-      "sha512": "Js7f30DXMo1plMo32fOpKF7AhCmuKyOKDT1fSayntGGOVfF5V/xKVu1UPI3N+/hTXuqKKgB++eACPZ120uLpGg==",
+      "sha512": "MEH06N0rIGmRT4LOKQ2BmUO0IxfvmIY/PaouSq+DFQku72OL8cxfw8W99uGpTCFf2vx2QHLRSh374iSM3asdTA==",
       "type": "package",
       "path": "system.threading.channels/4.5.0",
       "files": [
@@ -1257,13 +1287,13 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "Newtonsoft.Json >= 12.0.1",
-      "StackExchange.Redis >= 2.0.519"
+      "Newtonsoft.Json >= 12.0.2",
+      "StackExchange.Redis >= 2.0.601"
     ]
   },
   "packageFolders": {
     "C:\\Users\\anild\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Xamarin\\NuGet\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -1276,7 +1306,7 @@
       "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Services\\ABTS.RedisService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
@@ -1289,10 +1319,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
@@ -1316,11 +1343,11 @@
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[12.0.1, )"
+            "version": "[12.0.2, )"
           },
           "StackExchange.Redis": {
             "target": "Package",
-            "version": "[2.0.519, )"
+            "version": "[2.0.601, )"
           }
         },
         "imports": [

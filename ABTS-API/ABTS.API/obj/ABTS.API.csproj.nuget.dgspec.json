@@ -14,7 +14,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -27,10 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -78,7 +75,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.3, )"
             }
           },
           "imports": [
@@ -99,7 +96,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -112,10 +109,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -160,7 +154,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -173,10 +167,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -198,13 +189,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.2.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.2.4, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -231,7 +222,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -244,10 +235,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -265,13 +253,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.2.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.2.4, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -298,7 +286,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Services\\ABTS.ElasticService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -311,10 +299,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -342,7 +327,7 @@
             },
             "NEST": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.8.0, )"
             }
           },
           "imports": [
@@ -363,7 +348,7 @@
         "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Services\\ABTS.RedisService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -376,10 +361,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -403,11 +385,11 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[12.0.2, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
-              "version": "[2.0.519, )"
+              "version": "[2.0.601, )"
             }
           },
           "imports": [
