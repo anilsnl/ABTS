@@ -10,3 +10,11 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcor
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.csproj.CopyComplete
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.deps.json
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.dll
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.pdb
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.csprojAssemblyReference.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.AssemblyInfoInputs.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.AssemblyInfo.cs
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.dll
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.pdb

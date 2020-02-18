@@ -19,3 +19,13 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entit
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.AssemblyInfo.cs
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.pdb
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.deps.json
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.runtimeconfig.json
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.runtimeconfig.dev.json
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.dll
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.pdb
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.csprojAssemblyReference.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.AssemblyInfoInputs.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.AssemblyInfo.cs
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.dll
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.pdb

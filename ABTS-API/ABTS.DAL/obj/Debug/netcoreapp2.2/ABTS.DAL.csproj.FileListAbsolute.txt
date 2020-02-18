@@ -26,3 +26,6 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.Assemb
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.csproj.CopyComplete
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.pdb
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.csprojAssemblyReference.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.AssemblyInfoInputs.cache
+C:\gitrepo\other\ABTS\ABTS-API\ABTS.DAL\obj\Debug\netcoreapp2.2\ABTS.DAL.AssemblyInfo.cs

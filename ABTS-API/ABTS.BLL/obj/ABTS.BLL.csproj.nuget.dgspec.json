@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj": {}
+    "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj": {}
   },
   "projects": {
-    "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj": {
+    "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj",
+        "projectUniqueName": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj",
         "projectName": "ABTS.BLL",
-        "projectPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj",
-        "packagesPath": "C:\\Users\\anild\\.nuget\\packages\\",
-        "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.BLL\\obj\\",
+        "projectPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.BLL\\ABTS.BLL.csproj",
+        "packagesPath": "C:\\Users\\senel\\.nuget\\packages\\",
+        "outputPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\anild\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\senel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,13 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/pepsi-devops/_packaging/Kazandirio/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj": {
-                "projectPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj"
+              "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj": {
+                "projectPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj"
               }
             }
           }
@@ -55,28 +55,33 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj": {
+    "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj",
+        "projectUniqueName": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj",
         "projectName": "ABTS.DAL",
-        "projectPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj",
-        "packagesPath": "C:\\Users\\anild\\.nuget\\packages\\",
-        "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.DAL\\obj\\",
+        "projectPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\ABTS.DAL.csproj",
+        "packagesPath": "C:\\Users\\senel\\.nuget\\packages\\",
+        "outputPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\anild\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\senel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -85,13 +90,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/pepsi-devops/_packaging/Kazandirio/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj": {
-                "projectPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj"
+              "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj": {
+                "projectPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj"
               }
             }
           }
@@ -107,13 +113,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.4, )"
+              "version": "[3.1.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.4, )"
+              "version": "[3.1.1, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -123,28 +129,33 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj": {
+    "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj",
+        "projectUniqueName": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj",
         "projectName": "ABTS.Entities",
-        "projectPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj",
-        "packagesPath": "C:\\Users\\anild\\.nuget\\packages\\",
-        "outputPath": "C:\\gitrepo\\GitHub\\ABTS\\ABTS-API\\ABTS.Entities\\obj\\",
+        "projectPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\ABTS.Entities.csproj",
+        "packagesPath": "C:\\Users\\senel\\.nuget\\packages\\",
+        "outputPath": "C:\\gitrepo\\other\\ABTS\\ABTS-API\\ABTS.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\anild\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\senel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -153,7 +164,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/pepsi-devops/_packaging/Kazandirio/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
@@ -171,13 +183,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.4, )"
+              "version": "[3.1.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.4, )"
+              "version": "[3.1.1, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -187,10 +199,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
