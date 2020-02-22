@@ -1,9 +1,0 @@
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\bin\Debug\netcoreapp3.0\ABTS.DAL.deps.json
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\bin\Debug\netcoreapp3.0\ABTS.DAL.dll
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.csprojAssemblyReference.cache
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.csproj.CoreCompileInputs.cache
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.AssemblyInfoInputs.cache
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.AssemblyInfo.cs
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\bin\Debug\netcoreapp3.0\ABTS.DAL.pdb
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.dll
-C:\Users\baris\source\repos\ABTS\ABTS.DAL\obj\Debug\netcoreapp3.0\ABTS.DAL.pdb
