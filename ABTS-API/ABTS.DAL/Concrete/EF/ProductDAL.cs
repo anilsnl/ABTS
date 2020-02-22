@@ -28,7 +28,7 @@ namespace ABTS.DAL.Concrete.EF
             query.Append(columnName);
             string strSortType = isDesc ? "desc" : "asc";
             query.Append($" {strSortType} OFFSET ({pageSize*(page-1)}) ROWS FETCH NEXT ({pageSize}) ROWS ONLY");
-            return  _context.Products.FromSql(query.ToString());
+            return  _context.Products.FromSqlRaw(query.ToString());
         }
 
     }
