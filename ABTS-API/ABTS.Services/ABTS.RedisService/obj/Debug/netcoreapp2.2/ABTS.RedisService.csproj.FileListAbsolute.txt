@@ -1,7 +1,6 @@
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.deps.json
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.csprojAssemblyReference.cache
-C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.csproj.CoreCompileInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.AssemblyInfoInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\obj\Debug\netcoreapp2.2\ABTS.RedisService.AssemblyInfo.cs
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.RedisService\bin\Debug\netcoreapp2.2\ABTS.RedisService.pdb

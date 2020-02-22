@@ -16,7 +16,6 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\bin\Debug\netc
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\bin\Debug\netcoreapp2.2\ABTS.Entities.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\bin\Debug\netcoreapp2.2\ABTS.Entities.pdb
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\obj\Debug\netcoreapp2.2\ABTS.ElasticService.csprojAssemblyReference.cache
-C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\obj\Debug\netcoreapp2.2\ABTS.ElasticService.csproj.CoreCompileInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\obj\Debug\netcoreapp2.2\ABTS.ElasticService.AssemblyInfoInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\obj\Debug\netcoreapp2.2\ABTS.ElasticService.AssemblyInfo.cs
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Services\ABTS.ElasticService\obj\Debug\netcoreapp2.2\ABTS.ElasticService.csproj.CopyComplete

@@ -14,7 +14,6 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entit
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\bin\Debug\netcoreapp2.2\ABTS.Entities.pdb
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.csprojAssemblyReference.cache
-C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.csproj.CoreCompileInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.AssemblyInfoInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.AssemblyInfo.cs
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.Entities\obj\Debug\netcoreapp2.2\ABTS.Entities.dll
