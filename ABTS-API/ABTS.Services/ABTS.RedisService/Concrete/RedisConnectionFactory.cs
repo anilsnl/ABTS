@@ -1,7 +1,7 @@
-﻿using System;
-using ABTS.RedisService.Abstract;
+﻿using ABTS.RedisService.Abstract;
 using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
+using System;
 
 namespace ABTS.RedisService.Concrete
 {
