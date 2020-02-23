@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace ABTS.API
 {
@@ -28,7 +29,7 @@ namespace ABTS.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<NorthwindContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MSSQL")));
-            services.AddScoped<IProductDAL,ProductDAL>();
+            services.AddScoped<IProductDAL, ProductDAL>();
             services.AddScoped<ICategoryDAL, CategoryDAL>();
             services.AddScoped<ISupplierDAL, SupplierDAL>();
             services.AddScoped<IProductManager, ProductManager>();
@@ -40,6 +41,12 @@ namespace ABTS.API
             services.AddSingleton<IRedisConnectionFactory, RedisConnectionFactory>();
 
             services.AddMvc(op => op.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Latest);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ABTS API", Version = "v1" });
+            });
+
             services.AddCors();
         }
 
@@ -59,13 +66,15 @@ namespace ABTS.API
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvcWithDefaultRoute();
-            //app.UseMvc(mvc =>
-            //{
-            //    mvc.MapRoute(
-            //        name: "default_route",
-            //        template: "api/{controller}/{action}/{id?}",
-            //        defaults: new { controller = "Home", action = "Index" });
-            //});
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ABTS API V1");
+            });
         }
     }
 }

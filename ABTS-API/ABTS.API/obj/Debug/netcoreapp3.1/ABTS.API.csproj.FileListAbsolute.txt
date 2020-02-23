@@ -127,10 +127,15 @@ C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\ABTS.ElasticSer
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\ABTS.RedisService.pdb
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\ABTS.DAL.pdb
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.csprojAssemblyReference.cache
-C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.MvcApplicationPartsAssemblyInfo.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.AssemblyInfoInputs.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.AssemblyInfo.cs
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.RazorTargetAssemblyInfo.cache
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.csproj.CopyComplete
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.dll
 C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.pdb
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.MvcApplicationPartsAssemblyInfo.cs
+C:\gitrepo\GitHub\ABTS\ABTS-API\ABTS.API\obj\Debug\netcoreapp3.1\ABTS.API.MvcApplicationPartsAssemblyInfo.cache

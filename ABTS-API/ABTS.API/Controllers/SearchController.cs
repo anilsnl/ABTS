@@ -10,7 +10,7 @@ using ABTS.RedisService.Abstract;
 
 namespace ABTS.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class SearchController : ControllerBase
     {
@@ -33,7 +33,7 @@ namespace ABTS.API.Controllers
             this._redisService = redisService;
         }
 
-        [HttpGet]
+        [HttpGet("Configure")]
         public async Task<ActionResult<string>> Configure()
         {
             var products = await _productManager.GetListAsync().Result.ToListAsync();
@@ -44,7 +44,7 @@ namespace ABTS.API.Controllers
             return Ok("Created");
         }
 
-        [HttpGet("{key}")]
+        [HttpGet("GetProductByName")]
         public async Task<ActionResult<IEnumerable<ProductSchema>>> GetProductByName(string key)
         {
 
