@@ -39,7 +39,7 @@ namespace ABTS.API
             services.AddScoped<IProductElasticService, ProductElasticService>();
             services.AddScoped<IRedisService, RedisService.Concrete.RedisService>();
             services.AddSingleton<IRedisConnectionFactory, RedisConnectionFactory>();
-
+            services.AddSingleton<Helper>();
             services.AddMvc(op => op.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             services.AddSwaggerGen(c =>
