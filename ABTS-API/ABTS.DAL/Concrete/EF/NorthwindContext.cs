@@ -7,10 +7,6 @@ namespace ABTS.DAL.Concrete.EF
 {
     public partial class NorthwindContext : DbContext
     {
-        public NorthwindContext()
-        {
-        }
-
         public NorthwindContext(DbContextOptions<NorthwindContext> options)
             : base(options)
         {
@@ -29,14 +25,6 @@ namespace ABTS.DAL.Concrete.EF
         public virtual DbSet<Shippers> Shippers { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<Territories> Territories { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=localhost;Database=Northwind;Trusted_Connection=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

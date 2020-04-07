@@ -11,7 +11,7 @@ namespace ABTS.DAL.Concrete.EF
         private readonly NorthwindContext _context;
         public SupplierDAL(NorthwindContext context) :base(context)
         {
-            _context = new NorthwindContext();
+            _context = context;
         }
     }
 }

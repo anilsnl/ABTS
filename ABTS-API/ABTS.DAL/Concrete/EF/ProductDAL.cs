@@ -13,7 +13,7 @@ namespace ABTS.DAL.Concrete.EF
         private readonly NorthwindContext _context;
         public ProductDAL(NorthwindContext context) : base(context)
         {
-            _context = new NorthwindContext();
+            _context = context;
         }
 
         public IQueryable<Products> GetProductList(string columnName=null,int page = 1, int pageSize = 0,bool isDesc=false)
