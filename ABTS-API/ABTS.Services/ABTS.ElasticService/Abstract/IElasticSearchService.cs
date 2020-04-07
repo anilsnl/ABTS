@@ -1,10 +1,11 @@
 ﻿using ABTS.Entities.Concrete;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ABTS.ElasticService.Abstract
 {
     public interface IElasticSearchService
     {
-        bool CreateAllIndexes(List<Products> productList, List<Categories> categoryList, List<Suppliers> supplierList);
+        Task<bool> CreateAllIndexes(List<Products> productList, List<Categories> categoryList, List<Suppliers> supplierList);
     }
 }

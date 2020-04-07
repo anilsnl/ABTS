@@ -5,6 +5,7 @@ using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ABTS.ElasticService.Concrete
 {
@@ -17,66 +18,41 @@ namespace ABTS.ElasticService.Concrete
         }
         public Helper()
         {
-            var connectionSettings = new ConnectionSettings(new Uri("http://localhost:9200"));
+            var connectionSettings = new ConnectionSettings(new Uri("http://192.168.204.128:9200"));
             _elasticClient = new ElasticClient(connectionSettings);
         }
 
-        public bool CreateIndexProduct(string indexName)
+        public async Task<bool> AddManyProductAsync(string indexName, IEnumerable<ProductSchema> products)
         {
-            var createIndexDescriptor = new CreateIndexDescriptor(indexName)
-                .Mappings(ms => ms
-                .Map<ProductSchema>(m => m
-                .AutoMap()
-                .Properties(ps => ps
-                .Completion(c => c
-                .Name(p => p.ProductName)
-                .Name(p => p.ProductId)
-                .Name(t => t.CategoryId)
-                .Name(t => t.SupplierId))))
-             );
-            ICreateIndexResponse createIndexResponse = _elasticClient.CreateIndex(createIndexDescriptor);
-            return createIndexResponse.IsValid;
+            var existResponse = await _elasticClient.Indices.ExistsAsync(indexName);
+            if (!existResponse.Exists)
+            {
+                await _elasticClient.Indices.CreateAsync(indexName,c=>c.Map<ProductSchema>(a=>a.AutoMap()));
+            }
+            var res = await _elasticClient.IndexManyAsync<ProductSchema>(products, indexName);
+            return res.IsValid;
         }
-        public bool CreateIndexCategories(string indexName)
+
+        public async Task<bool> AddManyCategoryAsync(string indexName, IEnumerable<CategorySchema> categories)
         {
-            var createIndexDescriptor = new CreateIndexDescriptor(indexName)
-                .Mappings(ms => ms
-                .Map<CategorySchema>(m => m
-                .AutoMap()
-                .Properties(ps => ps
-                .Completion(c => c
-                .Name(p => p.CategoryName)
-                .Name(p => p.CategoryId)
-                )))
-             );
-            ICreateIndexResponse createIndexResponse = _elasticClient.CreateIndex(createIndexDescriptor);
-            return createIndexResponse.IsValid;
+            var existResponse = await _elasticClient.Indices.ExistsAsync(indexName);
+            if (!existResponse.Exists)
+            {
+                await _elasticClient.Indices.CreateAsync(indexName, c => c.Map<CategorySchema>(a => a.AutoMap()));
+            }
+            var res = await _elasticClient.IndexManyAsync(categories.ToList(), indexName);
+            return res.IsValid;
         }
-        public bool CreateIndexSuppliers(string indexName)
+        public async Task<bool> AddManySupplierAsync(string indexName, IEnumerable<SupplierSchema> suppliers)
         {
-            var createIndexDescriptor = new CreateIndexDescriptor(indexName)
-                .Mappings(ms => ms
-                .Map<SupplierSchema>(m => m
-                .AutoMap()
-                .Properties(ps => ps
-                .Completion(c => c
-                .Name(p => p.CompanyName)
-                .Name(p => p.SupplierId)
-                .Name(t => t.City))))
-             );
-            ICreateIndexResponse createIndexResponse = _elasticClient.CreateIndex(createIndexDescriptor);
-            return createIndexResponse.IsValid;
+            var existResponse = await _elasticClient.Indices.ExistsAsync(indexName);
+            if (!existResponse.Exists)
+            {
+                await _elasticClient.Indices.CreateAsync(indexName, c => c.Map<SupplierSchema>(a => a.AutoMap()));
+            }
+            var res = await _elasticClient.IndexManyAsync(suppliers.ToList(), indexName);
+            return res.IsValid;
         }
-        public bool AddManyProduct(string indexName, IEnumerable<ProductSchema> products) =>
-            _elasticClient.IndexMany(products.ToList(), indexName).IsValid;
-        public bool AddManyCategory(string indexName, IEnumerable<CategorySchema> categories)=>
-            _elasticClient.IndexMany(categories.ToList(), indexName).IsValid;
-        public bool AddManySupplier(string indexName, IEnumerable<SupplierSchema> suppliers) =>
-            _elasticClient.IndexMany(suppliers.ToList(), indexName).IsValid;
-        public bool IndexExists(string indexName)
-        {
-            bool isExists = _elasticClient.IndexExists(indexName.ToLowerInvariant()).Exists;
-            return isExists;
-        }
+
     }
 }

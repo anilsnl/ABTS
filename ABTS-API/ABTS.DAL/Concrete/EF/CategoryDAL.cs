@@ -8,7 +8,7 @@ namespace ABTS.DAL.Concrete.EF
         private readonly NorthwindContext _context;
         public CategoryDAL(NorthwindContext context) :base(context)
         {
-            _context = new NorthwindContext();
+            _context = context;
         }
     }
 }

@@ -1,15 +1,10 @@
-﻿using ABTS.BLL.Abstract;
-using ABTS.BLL.Concrete;
-using ABTS.DAL.Abstract;
-using ABTS.DAL.Concrete.EF;
-using ABTS.ElasticService.Abstract;
-using ABTS.ElasticService.Concrete;
-using ABTS.RedisService.Abstract;
-using ABTS.RedisService.Concrete;
+﻿using ABTS.BLL.IOC;
+using ABTS.ElasticService.IOC;
+using ABTS.RedisService.IOC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -28,23 +23,24 @@ namespace ABTS.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<NorthwindContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MSSQL")));
-            services.AddScoped<IProductDAL, ProductDAL>();
-            services.AddScoped<ICategoryDAL, CategoryDAL>();
-            services.AddScoped<ISupplierDAL, SupplierDAL>();
-            services.AddScoped<IProductManager, ProductManager>();
-            services.AddScoped<ISupplierManager, SupplierManager>();
-            services.AddScoped<ICategoryManager, CategoryManager>();
-            services.AddScoped<IElasticSearchService, ElasticSearchService>();
-            services.AddScoped<IProductElasticService, ProductElasticService>();
-            services.AddScoped<IRedisService, RedisService.Concrete.RedisService>();
-            services.AddSingleton<IRedisConnectionFactory, RedisConnectionFactory>();
+            services.RegisterBLL(Configuration);
+            services.RegisterElasticSearchService(Configuration);
+            services.RegisterRedisService(Configuration);
 
-            services.AddMvc(op => op.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddMvc(op => op.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(CompatibilityVersion.Latest);
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ApiVersionReader = new MediaTypeApiVersionReader();
+                options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
+                options.DefaultApiVersion = new ApiVersion(2, 0);
+                options.UseApiBehavior = false;
+            });
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ABTS API", Version = "v1" });
+                c.SwaggerDoc("v2", new OpenApiInfo { Title = "ABTS API", Version = "v2" });
             });
 
             services.AddCors();
@@ -66,14 +62,11 @@ namespace ABTS.API
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvcWithDefaultRoute();
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseApiVersioning();
             app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ABTS API V1");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "ABTS API V2");
             });
         }
     }

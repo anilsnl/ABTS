@@ -23,13 +23,10 @@ namespace ABTS.ElasticService.Concrete
 
         public async Task<IEnumerable<ProductSchema>> GetProductsByName(string keyword)
         {
-            var searchResponseName = await _elasticClient.SearchAsync<ProductSchema>(s => s
-                                 .Index(indexName)
-                                 .Type("productschema")
-                                 .Query(q => q.QueryString(qs => qs.Fields(x => x.Field(t => t.ProductName)).Query(keyword + "*"))));
+            var searchResponseName = await _elasticClient.SearchAsync<ProductSchema>(s => s.SuggestField(a => a.ProductName).Query(a => a.Term(q => q.Value(keyword))));
 
             var suggests = from suggest in searchResponseName.Hits
-                select suggest.Source;
+                           select suggest.Source;
             return suggests;
         }
     }

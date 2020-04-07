@@ -10,7 +10,8 @@ using ABTS.RedisService.Abstract;
 
 namespace ABTS.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("2.0")]
     [ApiController]
     public class SearchController : ControllerBase
     {

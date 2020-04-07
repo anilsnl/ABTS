@@ -10,7 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ABTS.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("2.0")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -24,18 +25,18 @@ namespace ABTS.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProductList([FromBody]ProductListModel model)
+        [HttpGet("GetProductList")]
+        public async Task<ActionResult<IEnumerable<Products>>> GetProductList([FromQuery]ProductListModel model)
         {
             List<Products> response = await _productManager.GetProductList(columnName: model.columnName, page: model.page, pageSize: model.pageSize, isDesc: model.isDesc).ToListAsync();
             return Ok(response);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetProduct")]
         public async Task<ActionResult<Products>> GetProduct(int id)
         {
             var response = await _productManager.GetAsync(a => a.ProductId == id);
-            if (response==null)
+            if (response == null)
             {
                 return NotFound();
             }
