@@ -4,7 +4,7 @@ This product contains using of the following techlogogies and libraries based on
   1. Elasticsearch 7 with NEST library.
   2. Redis cacheing
   3. Swagger
-  4. API Verioning
+  4. API Versioning
   5. EF Core
 
 Also dockerfile is included in the API project.
