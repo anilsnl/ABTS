@@ -1,5 +1,6 @@
 ﻿using ABTS.ElasticService.Abstract;
 using ABTS.ElasticService.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Nest;
 using System;
@@ -23,11 +24,29 @@ namespace ABTS.ElasticService.Concrete
 
         public async Task<IEnumerable<ProductSchema>> GetProductsByName(string keyword)
         {
-            var searchResponseName = await _elasticClient.SearchAsync<ProductSchema>(s => s.SuggestField(a => a.ProductName).Query(a => a.Term(q => q.Value(keyword))));
+            try
+            {
+                var searchResponse = await _elasticClient.SearchAsync<ProductSchema>(s => s
+                                     .Index(indexName)
+                                     .Suggest(su => su
+                                          .Completion("suggestions", c => c
+                                               .Field(f => f.ProductName)
+                                               .Prefix(keyword)
+                                               .Fuzzy(f => f
+                                                   .Fuzziness(Fuzziness.Auto)
+                                               )
+                                               .Size(5))
+                                             ));
 
-            var suggests = from suggest in searchResponseName.Hits
-                           select suggest.Source;
-            return suggests;
+                var suggests = from suggest in searchResponse.Suggest["suggestions"]
+                               from option in suggest.Options
+                               select option.Source;
+                return suggests;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }
