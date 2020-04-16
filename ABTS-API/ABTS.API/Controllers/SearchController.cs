@@ -50,7 +50,7 @@ namespace ABTS.API.Controllers
         {
 
             var response =
-                await _redisService.GetAndSetAsync(key, () => { return _productElasticService.GetProductsByName(key); });
+                await _redisService.GetAndSetAsync(key, () => _productElasticService.GetProductsByName(key));
             if (response != null && response.Any())
             {
                 return Ok(response);

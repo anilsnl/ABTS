@@ -25,10 +25,12 @@ namespace ABTS.ElasticService.Concrete
         public async Task<bool> AddManyProductAsync(string indexName, IEnumerable<ProductSchema> products)
         {
             var existResponse = await _elasticClient.Indices.ExistsAsync(indexName);
-            if (!existResponse.Exists)
+            if (existResponse.Exists)
             {
-                await _elasticClient.Indices.CreateAsync(indexName,c=>c.Map<ProductSchema>(a=>a.AutoMap()));
+                await _elasticClient.Indices.DeleteAsync(indexName);
             }
+            await _elasticClient.Indices.CreateAsync(indexName, c => c.Map<ProductSchema>(a => a.AutoMap().Properties(p=>p.Completion(cc=>cc.Name(pn=>pn.ProductName)))));
+
             var res = await _elasticClient.IndexManyAsync<ProductSchema>(products, indexName);
             return res.IsValid;
         }

@@ -19,9 +19,9 @@ namespace ABTS.ElasticService.Concrete
         }
         public async Task<bool> CreateAllIndexes(List<Products> productList, List<Categories> categoryList, List<Suppliers> supplierList)
         {
-            string productsIndexName = _configuration["Elastic:Indexes:Product"].ToString(); ;
-            string categoriesIndexName = _configuration["Elastic:Indexes:Category"].ToString(); ;
-            string suppliersIndexName = _configuration["Elastic:Indexes:Product"].ToString(); ;
+            var productsIndexName = _configuration["Elastic:Indexes:Product"].ToString(); ;
+            var categoriesIndexName = _configuration["Elastic:Indexes:Category"].ToString(); ;
+            var suppliersIndexName = _configuration["Elastic:Indexes:Product"].ToString(); ;
             var productSchema = productList.Select(a =>
                 new ProductSchema()
                 {
@@ -42,11 +42,11 @@ namespace ABTS.ElasticService.Concrete
                 CompanyName = a.CompanyName
             });
             
-            var resultproducts = await _helper.AddManyProductAsync(productsIndexName, productSchema);
-            var resultcategories = await _helper.AddManyCategoryAsync(categoriesIndexName, categorySchema);
-            var resultsuppliers = await _helper.AddManySupplierAsync(suppliersIndexName, supplierSchema);
+            var resultProducts = await _helper.AddManyProductAsync(productsIndexName, productSchema);
+            var resultCategories = await _helper.AddManyCategoryAsync(categoriesIndexName, categorySchema);
+            var resultSuppliers = await _helper.AddManySupplierAsync(suppliersIndexName, supplierSchema);
 
-            return resultcategories && resultproducts && resultsuppliers;
+            return resultCategories && resultProducts && resultSuppliers;
         }
 
     }
