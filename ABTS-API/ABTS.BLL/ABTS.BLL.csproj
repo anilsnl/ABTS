@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ABTS.DAL\ABTS.DAL.csproj" />
+    <ProjectReference Include="..\ABTS.Services\ABTS.ElasticService\ABTS.ElasticService.csproj" />
   </ItemGroup>
 
 </Project>
