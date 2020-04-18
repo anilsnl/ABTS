@@ -47,7 +47,7 @@ services:
     depends_on: 
       - postgres_db
       - redis
-      - elastic
+      - elasticsearch
   abts_batchsservice:
     build:
       context: .
@@ -58,4 +58,4 @@ services:
     depends_on: 
       - postgres_db
       - redis
-      - elastic
+      - elasticsearch
