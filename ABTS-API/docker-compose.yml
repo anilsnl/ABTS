@@ -52,7 +52,7 @@ services:
     build:
       context: .
       dockerfile: HangfireService_Dockerfile
-    container_name: abts-api
+    container_name: abts-batchservice
     ports: 
       - 88:80
     depends_on: 
