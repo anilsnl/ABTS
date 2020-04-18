@@ -8,7 +8,7 @@ This product contains using of the following techlogogies and libraries based on
   5. EF Core with PostgreSQL
   6. Hangfire with Redis
 
-#Docker & Docker-Compose 
+# Docker & Docker-Compose 
   
 Project inclued docker-compose support. Docker-compose ups to the folwwoing containers.
 
@@ -27,9 +27,9 @@ Just use the following commands to up it.
 
 It's done :) Happy coding.
 
-go -> http://localhost/swagger for API swagger UI.
-go -> http://localhost:5601 for Kibana UI.
-go -> http://localhost:88 for Hangfire UI.
+  go -> http://localhost/swagger for API swagger UI
+  go -> http://localhost:5601 for Kibana UI
+  go -> http://localhost:88 for Hangfire UI
 
 To contact Postgres use.
   -host: localhost
