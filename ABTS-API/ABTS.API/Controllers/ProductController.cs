@@ -45,6 +45,44 @@ namespace ABTS.API.Controllers
                 return Ok(response);
             }
         }
-
+        [HttpPost("PostProduct")]
+        public async Task<IActionResult> PostProduct([FromBody]Product product)
+        {
+            var data = await _productManager.AddAsync(product);
+            if (data)
+            {
+                return Ok("Product added");
+            }
+            else
+            {
+                return BadRequest("Product could not be added.");
+            }
+        }
+        [HttpPut("PutProduct")]
+        public async Task<IActionResult> PuttProduct([FromBody]Product product)
+        {
+            var data = await _productManager.UpdateAndGetAsync(product);
+            if (data != null)
+            {
+                return Ok(data);
+            }
+            else
+            {
+                return BadRequest("Product could not be added.");
+            }
+        }
+        [HttpDelete("DeleteProduct")]
+        public async Task<IActionResult> DeleteProduct([FromBody]int id)
+        {
+            var data = await _productManager.DeleteAsync(new Product { ProductId = (short)id});
+            if (data)
+            {
+                return Ok("Product deleted");
+            }
+            else
+            {
+                return BadRequest("Product could not be deleted.");
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace ABTS.DAL.Concrete.EF
         {
             _context = context;
         }
-
+        
         public IQueryable<Product> GetProductList(string columnName=null,int page = 1, int pageSize = 0,bool isDesc=false)
         {
             pageSize = pageSize < 1 ? _context.Products.Count() : pageSize;

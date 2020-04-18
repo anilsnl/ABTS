@@ -47,9 +47,8 @@ namespace ABTS.HangfireService
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseStaticFiles();
-            app.UseHangfireDashboard();
+            app.UseHangfireDashboard("");
             app.UseHangfireServer();
             HangfireHelper.RegisterJobs(app.ApplicationServices.GetService<IServiceScopeFactory>());
         }

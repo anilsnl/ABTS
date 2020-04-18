@@ -32,7 +32,9 @@ namespace ABTS.DAL.Concrete.EF
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-            return await _context.Set<TEntity>().FirstOrDefaultAsync(expression);
+            return await _context.Set<TEntity>()
+                .AsNoTracking()
+                .FirstOrDefaultAsync(expression);
         }
 
         public IQueryable<TEntity> GetList(Expression<Func<TEntity, bool>> expression = null)
