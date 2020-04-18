@@ -19,3 +19,15 @@ services:
     container_name: dev-redis
     ports:
       - 6379:6379
+  db:
+    image: postgres:12
+      environment:
+        POSTGRES_DB: northwind
+        POSTGRES_USER: northwind_user
+        POSTGRES_PASSWORD: 5252
+    ports: 
+      - 5432:5432
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+      - ./northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
+    
