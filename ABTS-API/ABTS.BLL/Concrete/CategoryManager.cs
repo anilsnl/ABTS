@@ -16,32 +16,32 @@ namespace ABTS.BLL.Concrete
         {
             this._categoryDal = _categoryDal;
         }
-        public async Task<bool> AddAsync(Categories entity)
+        public async Task<bool> AddAsync(Category entity)
         {
             return await _categoryDal.AddAsync(entity);
         }
 
-        public async Task<bool> DeleteAsync(Categories entity)
+        public async Task<bool> DeleteAsync(Category entity)
         {
             return await _categoryDal.DeleteAsync(entity);
         }
 
-        public async Task<Categories> GetAsync(Expression<Func<Categories, bool>> expression)
+        public async Task<Category> GetAsync(Expression<Func<Category, bool>> expression)
         {
             return await _categoryDal.GetAsync(expression);
         }
 
-        public async Task<IQueryable<Categories>> GetListAsync(Expression<Func<Categories, bool>> expression = null)
+        public async Task<IQueryable<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null)
         {
             return await _categoryDal.GetListAsync(expression);
         }
 
-        public async Task<Categories> UpdateAndGetAsync(Categories entity)
+        public async Task<Category> UpdateAndGetAsync(Category entity)
         {
             return await _categoryDal.UpdateAndGetAsync(entity);
         }
 
-        public async Task<bool> UpdateAsync(Categories entity)
+        public async Task<bool> UpdateAsync(Category entity)
         {
             return await _categoryDal.UpdateAsync(entity);
         }

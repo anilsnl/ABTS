@@ -18,42 +18,42 @@ namespace ABTS.BLL.Concrete
             this._productDal = _productDal;
         }
 
-        public async Task<bool> AddAsync(Products entity)
+        public async Task<bool> AddAsync(Product entity)
         {
             return await _productDal.AddAsync(entity);
         }
 
-        public async Task<bool> DeleteAsync(Products entity)
+        public async Task<bool> DeleteAsync(Product entity)
         {
             return await _productDal.DeleteAsync(entity);
         }
 
-        public async Task<Products> GetAsync(Expression<Func<Products, bool>> expression)
+        public async Task<Product> GetAsync(Expression<Func<Product, bool>> expression)
         {
             return await _productDal.GetAsync(expression);
         }
 
-        public IQueryable<Products> GetList(Expression<Func<Products, bool>> expression = null)
+        public IQueryable<Product> GetList(Expression<Func<Product, bool>> expression = null)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IQueryable<Products>> GetListAsync(Expression<Func<Products, bool>> expression = null)
+        public async Task<IQueryable<Product>> GetListAsync(Expression<Func<Product, bool>> expression = null)
         {
             return await _productDal.GetListAsync(expression);
         }
 
-        public IQueryable<Products> GetProductList(string columnName = null, int page = 1, int pageSize = 0, bool isDesc = false)
+        public IQueryable<Product> GetProductList(string columnName = null, int page = 1, int pageSize = 0, bool isDesc = false)
         {
            return _productDal.GetProductList(columnName:columnName,page:page,pageSize:pageSize,isDesc:isDesc);
         }
 
-        public async Task<Products> UpdateAndGetAsync(Products entity)
+        public async Task<Product> UpdateAndGetAsync(Product entity)
         {
             return await _productDal.UpdateAndGetAsync(entity);
         }
 
-        public async Task<bool> UpdateAsync(Products entity)
+        public async Task<bool> UpdateAsync(Product entity)
         {
             return await _productDal.UpdateAsync(entity);
         }

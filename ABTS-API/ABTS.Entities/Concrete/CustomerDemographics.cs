@@ -1,9 +1,10 @@
 ﻿using ABTS.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 
 namespace ABTS.Entities.Concrete
 {
-    public partial class CustomerDemographics:IEntity
+    public partial class CustomerDemographics : IEntity
     {
         public CustomerDemographics()
         {

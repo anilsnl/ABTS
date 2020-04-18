@@ -17,7 +17,7 @@ namespace ABTS.ElasticService.Concrete
             _helper = helper;
             this._configuration = _configuration;
         }
-        public async Task<bool> CreateAllIndexes(List<Products> productList, List<Categories> categoryList, List<Suppliers> supplierList)
+        public async Task<bool> CreateAllIndexes(List<Product> productList, List<Category> categoryList, List<Supplier> supplierList)
         {
             var productsIndexName = _configuration["Elastic:Indexes:Product"].ToString(); ;
             var categoriesIndexName = _configuration["Elastic:Indexes:Category"].ToString(); ;

@@ -1,7 +1,7 @@
 ﻿using System;
-using ABTS.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using ABTS.Entities.Concrete;
 
 namespace ABTS.DAL.Concrete.EF
 {
@@ -12,445 +12,536 @@ namespace ABTS.DAL.Concrete.EF
         {
         }
 
-        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
-        public virtual DbSet<EmployeeTerritories> EmployeeTerritories { get; set; }
-        public virtual DbSet<Employees> Employees { get; set; }
-        public virtual DbSet<OrderDetails> OrderDetails { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<EmployeeTerritorie> EmployeeTerritories { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Region> Region { get; set; }
-        public virtual DbSet<Shippers> Shippers { get; set; }
-        public virtual DbSet<Suppliers> Suppliers { get; set; }
-        public virtual DbSet<Territories> Territories { get; set; }
+        public virtual DbSet<Shipper> Shippers { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Territory> Territories { get; set; }
+        public virtual DbSet<UsState> UsStates { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
-
-            modelBuilder.Entity<Categories>(entity =>
+            modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasKey(e => e.CategoryId);
+                entity.HasKey(e => e.CategoryId)
+                    .HasName("pk_categories");
 
-                entity.HasIndex(e => e.CategoryName)
-                    .HasName("CategoryName");
+                entity.ToTable("categories");
 
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+                entity.Property(e => e.CategoryId)
+                    .HasColumnName("category_id")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
+                    .HasColumnName("category_name")
                     .HasMaxLength(15);
 
-                entity.Property(e => e.Description).HasColumnType("ntext");
+                entity.Property(e => e.Description).HasColumnName("description");
 
-                entity.Property(e => e.Picture).HasColumnType("image");
+                entity.Property(e => e.Picture).HasColumnName("picture");
             });
 
             modelBuilder.Entity<CustomerCustomerDemo>(entity =>
             {
                 entity.HasKey(e => new { e.CustomerId, e.CustomerTypeId })
-                    .ForSqlServerIsClustered(false);
+                    .HasName("pk_customer_customer_demo");
+
+                entity.ToTable("customer_customer_demo");
 
                 entity.Property(e => e.CustomerId)
-                    .HasColumnName("CustomerID")
-                    .HasMaxLength(5);
+                    .HasColumnName("customer_id")
+                    .HasColumnType("char");
 
                 entity.Property(e => e.CustomerTypeId)
-                    .HasColumnName("CustomerTypeID")
-                    .HasMaxLength(10);
+                    .HasColumnName("customer_type_id")
+                    .HasColumnType("char");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.CustomerCustomerDemo)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerCustomerDemo_Customers");
+                    .HasConstraintName("fk_customer_customer_demo_customers");
 
                 entity.HasOne(d => d.CustomerType)
                     .WithMany(p => p.CustomerCustomerDemo)
                     .HasForeignKey(d => d.CustomerTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerCustomerDemo");
+                    .HasConstraintName("fk_customer_customer_demo_customer_demographics");
             });
 
             modelBuilder.Entity<CustomerDemographics>(entity =>
             {
                 entity.HasKey(e => e.CustomerTypeId)
-                    .ForSqlServerIsClustered(false);
+                    .HasName("pk_customer_demographics");
+
+                entity.ToTable("customer_demographics");
 
                 entity.Property(e => e.CustomerTypeId)
-                    .HasColumnName("CustomerTypeID")
-                    .HasMaxLength(10)
-                    .ValueGeneratedNever();
+                    .HasColumnName("customer_type_id")
+                    .HasColumnType("char");
 
-                entity.Property(e => e.CustomerDesc).HasColumnType("ntext");
+                entity.Property(e => e.CustomerDesc).HasColumnName("customer_desc");
             });
 
-            modelBuilder.Entity<Customers>(entity =>
+            modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasKey(e => e.CustomerId);
+                entity.HasKey(e => e.CustomerId)
+                    .HasName("pk_customers");
 
-                entity.HasIndex(e => e.City)
-                    .HasName("City");
-
-                entity.HasIndex(e => e.CompanyName)
-                    .HasName("CompanyName");
-
-                entity.HasIndex(e => e.PostalCode)
-                    .HasName("PostalCode");
-
-                entity.HasIndex(e => e.Region)
-                    .HasName("Region");
+                entity.ToTable("customers");
 
                 entity.Property(e => e.CustomerId)
-                    .HasColumnName("CustomerID")
-                    .HasMaxLength(5)
-                    .ValueGeneratedNever();
+                    .HasColumnName("customer_id")
+                    .HasColumnType("char");
 
-                entity.Property(e => e.Address).HasMaxLength(60);
+                entity.Property(e => e.Address)
+                    .HasColumnName("address")
+                    .HasMaxLength(60);
 
-                entity.Property(e => e.City).HasMaxLength(15);
+                entity.Property(e => e.City)
+                    .HasColumnName("city")
+                    .HasMaxLength(15);
 
                 entity.Property(e => e.CompanyName)
                     .IsRequired()
+                    .HasColumnName("company_name")
                     .HasMaxLength(40);
 
-                entity.Property(e => e.ContactName).HasMaxLength(30);
+                entity.Property(e => e.ContactName)
+                    .HasColumnName("contact_name")
+                    .HasMaxLength(30);
 
-                entity.Property(e => e.ContactTitle).HasMaxLength(30);
+                entity.Property(e => e.ContactTitle)
+                    .HasColumnName("contact_title")
+                    .HasMaxLength(30);
 
-                entity.Property(e => e.Country).HasMaxLength(15);
+                entity.Property(e => e.Country)
+                    .HasColumnName("country")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.Fax).HasMaxLength(24);
+                entity.Property(e => e.Fax)
+                    .HasColumnName("fax")
+                    .HasMaxLength(24);
 
-                entity.Property(e => e.Phone).HasMaxLength(24);
+                entity.Property(e => e.Phone)
+                    .HasColumnName("phone")
+                    .HasMaxLength(24);
 
-                entity.Property(e => e.PostalCode).HasMaxLength(10);
+                entity.Property(e => e.PostalCode)
+                    .HasColumnName("postal_code")
+                    .HasMaxLength(10);
 
-                entity.Property(e => e.Region).HasMaxLength(15);
+                entity.Property(e => e.Region)
+                    .HasColumnName("region")
+                    .HasMaxLength(15);
             });
 
-            modelBuilder.Entity<EmployeeTerritories>(entity =>
+            modelBuilder.Entity<EmployeeTerritorie>(entity =>
             {
                 entity.HasKey(e => new { e.EmployeeId, e.TerritoryId })
-                    .ForSqlServerIsClustered(false);
+                    .HasName("pk_employee_territories");
 
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+                entity.ToTable("employee_territories");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
 
                 entity.Property(e => e.TerritoryId)
-                    .HasColumnName("TerritoryID")
+                    .HasColumnName("territory_id")
                     .HasMaxLength(20);
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.EmployeeTerritories)
                     .HasForeignKey(d => d.EmployeeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EmployeeTerritories_Employees");
+                    .HasConstraintName("fk_employee_territories_employees");
 
                 entity.HasOne(d => d.Territory)
                     .WithMany(p => p.EmployeeTerritories)
                     .HasForeignKey(d => d.TerritoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EmployeeTerritories_Territories");
+                    .HasConstraintName("fk_employee_territories_territories");
             });
 
-            modelBuilder.Entity<Employees>(entity =>
+            modelBuilder.Entity<Employee>(entity =>
             {
-                entity.HasKey(e => e.EmployeeId);
+                entity.HasKey(e => e.EmployeeId)
+                    .HasName("pk_employees");
 
-                entity.HasIndex(e => e.LastName)
-                    .HasName("LastName");
+                entity.ToTable("employees");
 
-                entity.HasIndex(e => e.PostalCode)
-                    .HasName("PostalCode");
+                entity.Property(e => e.EmployeeId)
+                    .HasColumnName("employee_id")
+                    .ValueGeneratedNever();
 
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+                entity.Property(e => e.Address)
+                    .HasColumnName("address")
+                    .HasMaxLength(60);
 
-                entity.Property(e => e.Address).HasMaxLength(60);
+                entity.Property(e => e.BirthDate)
+                    .HasColumnName("birth_date")
+                    .HasColumnType("date");
 
-                entity.Property(e => e.BirthDate).HasColumnType("datetime");
+                entity.Property(e => e.City)
+                    .HasColumnName("city")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.City).HasMaxLength(15);
+                entity.Property(e => e.Country)
+                    .HasColumnName("country")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.Country).HasMaxLength(15);
-
-                entity.Property(e => e.Extension).HasMaxLength(4);
+                entity.Property(e => e.Extension)
+                    .HasColumnName("extension")
+                    .HasMaxLength(4);
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()
+                    .HasColumnName("first_name")
                     .HasMaxLength(10);
 
-                entity.Property(e => e.HireDate).HasColumnType("datetime");
+                entity.Property(e => e.HireDate)
+                    .HasColumnName("hire_date")
+                    .HasColumnType("date");
 
-                entity.Property(e => e.HomePhone).HasMaxLength(24);
+                entity.Property(e => e.HomePhone)
+                    .HasColumnName("home_phone")
+                    .HasMaxLength(24);
 
                 entity.Property(e => e.LastName)
                     .IsRequired()
+                    .HasColumnName("last_name")
                     .HasMaxLength(20);
 
-                entity.Property(e => e.Notes).HasColumnType("ntext");
+                entity.Property(e => e.Notes).HasColumnName("notes");
 
-                entity.Property(e => e.Photo).HasColumnType("image");
+                entity.Property(e => e.Photo).HasColumnName("photo");
 
-                entity.Property(e => e.PhotoPath).HasMaxLength(255);
+                entity.Property(e => e.PhotoPath)
+                    .HasColumnName("photo_path")
+                    .HasMaxLength(255);
 
-                entity.Property(e => e.PostalCode).HasMaxLength(10);
+                entity.Property(e => e.PostalCode)
+                    .HasColumnName("postal_code")
+                    .HasMaxLength(10);
 
-                entity.Property(e => e.Region).HasMaxLength(15);
+                entity.Property(e => e.Region)
+                    .HasColumnName("region")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.Title).HasMaxLength(30);
+                entity.Property(e => e.ReportsTo).HasColumnName("reports_to");
 
-                entity.Property(e => e.TitleOfCourtesy).HasMaxLength(25);
+                entity.Property(e => e.Title)
+                    .HasColumnName("title")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.TitleOfCourtesy)
+                    .HasColumnName("title_of_courtesy")
+                    .HasMaxLength(25);
 
                 entity.HasOne(d => d.ReportsToNavigation)
                     .WithMany(p => p.InverseReportsToNavigation)
                     .HasForeignKey(d => d.ReportsTo)
-                    .HasConstraintName("FK_Employees_Employees");
+                    .HasConstraintName("fk_employees_employees");
             });
 
-            modelBuilder.Entity<OrderDetails>(entity =>
+            modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => new { e.OrderId, e.ProductId })
-                    .HasName("PK_Order_Details");
+                    .HasName("pk_order_details");
 
-                entity.ToTable("Order Details");
+                entity.ToTable("order_details");
 
-                entity.HasIndex(e => e.OrderId)
-                    .HasName("OrdersOrder_Details");
+                entity.Property(e => e.OrderId).HasColumnName("order_id");
 
-                entity.HasIndex(e => e.ProductId)
-                    .HasName("ProductsOrder_Details");
+                entity.Property(e => e.ProductId).HasColumnName("product_id");
 
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
+                entity.Property(e => e.Discount).HasColumnName("discount");
 
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
+                entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-                entity.Property(e => e.Discount).HasDefaultValueSql("(0)");
-
-                entity.Property(e => e.Quantity).HasDefaultValueSql("(1)");
-
-                entity.Property(e => e.UnitPrice)
-                    .HasColumnType("money")
-                    .HasDefaultValueSql("(0)");
+                entity.Property(e => e.UnitPrice).HasColumnName("unit_price");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Details_Orders");
+                    .HasConstraintName("fk_order_details_orders");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Details_Products");
+                    .HasConstraintName("fk_order_details_products");
             });
 
-            modelBuilder.Entity<Orders>(entity =>
+            modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(e => e.OrderId);
+                entity.HasKey(e => e.OrderId)
+                    .HasName("pk_orders");
 
-                entity.HasIndex(e => e.CustomerId)
-                    .HasName("CustomersOrders");
+                entity.ToTable("orders");
 
-                entity.HasIndex(e => e.EmployeeId)
-                    .HasName("EmployeesOrders");
-
-                entity.HasIndex(e => e.OrderDate)
-                    .HasName("OrderDate");
-
-                entity.HasIndex(e => e.ShipPostalCode)
-                    .HasName("ShipPostalCode");
-
-                entity.HasIndex(e => e.ShipVia)
-                    .HasName("ShippersOrders");
-
-                entity.HasIndex(e => e.ShippedDate)
-                    .HasName("ShippedDate");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
+                entity.Property(e => e.OrderId)
+                    .HasColumnName("order_id")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.CustomerId)
-                    .HasColumnName("CustomerID")
-                    .HasMaxLength(5);
+                    .HasColumnName("customer_id")
+                    .HasColumnType("char");
 
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+                entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
 
-                entity.Property(e => e.Freight)
-                    .HasColumnType("money")
-                    .HasDefaultValueSql("(0)");
+                entity.Property(e => e.Freight).HasColumnName("freight");
 
-                entity.Property(e => e.OrderDate).HasColumnType("datetime");
+                entity.Property(e => e.OrderDate)
+                    .HasColumnName("order_date")
+                    .HasColumnType("date");
 
-                entity.Property(e => e.RequiredDate).HasColumnType("datetime");
+                entity.Property(e => e.RequiredDate)
+                    .HasColumnName("required_date")
+                    .HasColumnType("date");
 
-                entity.Property(e => e.ShipAddress).HasMaxLength(60);
+                entity.Property(e => e.ShipAddress)
+                    .HasColumnName("ship_address")
+                    .HasMaxLength(60);
 
-                entity.Property(e => e.ShipCity).HasMaxLength(15);
+                entity.Property(e => e.ShipCity)
+                    .HasColumnName("ship_city")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.ShipCountry).HasMaxLength(15);
+                entity.Property(e => e.ShipCountry)
+                    .HasColumnName("ship_country")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.ShipName).HasMaxLength(40);
+                entity.Property(e => e.ShipName)
+                    .HasColumnName("ship_name")
+                    .HasMaxLength(40);
 
-                entity.Property(e => e.ShipPostalCode).HasMaxLength(10);
+                entity.Property(e => e.ShipPostalCode)
+                    .HasColumnName("ship_postal_code")
+                    .HasMaxLength(10);
 
-                entity.Property(e => e.ShipRegion).HasMaxLength(15);
+                entity.Property(e => e.ShipRegion)
+                    .HasColumnName("ship_region")
+                    .HasMaxLength(15);
 
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
+                entity.Property(e => e.ShipVia).HasColumnName("ship_via");
+
+                entity.Property(e => e.ShippedDate)
+                    .HasColumnName("shipped_date")
+                    .HasColumnType("date");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK_Orders_Customers");
+                    .HasConstraintName("fk_orders_customers");
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK_Orders_Employees");
+                    .HasConstraintName("fk_orders_employees");
 
                 entity.HasOne(d => d.ShipViaNavigation)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.ShipVia)
-                    .HasConstraintName("FK_Orders_Shippers");
+                    .HasConstraintName("fk_orders_shippers");
             });
 
-            modelBuilder.Entity<Products>(entity =>
+            modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(e => e.ProductId);
+                entity.HasKey(e => e.ProductId)
+                    .HasName("pk_products");
 
-                entity.HasIndex(e => e.CategoryId)
-                    .HasName("CategoryID");
+                entity.ToTable("products");
 
-                entity.HasIndex(e => e.ProductName)
-                    .HasName("ProductName");
+                entity.Property(e => e.ProductId)
+                    .HasColumnName("product_id")
+                    .ValueGeneratedNever();
 
-                entity.HasIndex(e => e.SupplierId)
-                    .HasName("SuppliersProducts");
+                entity.Property(e => e.CategoryId).HasColumnName("category_id");
 
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-
-                entity.Property(e => e.Discontinued)
-                    .IsRequired()
-                    .HasDefaultValueSql("(0)");
+                entity.Property(e => e.Discontinued).HasColumnName("discontinued");
 
                 entity.Property(e => e.ProductName)
                     .IsRequired()
+                    .HasColumnName("product_name")
                     .HasMaxLength(40);
 
-                entity.Property(e => e.QuantityPerUnit).HasMaxLength(20);
+                entity.Property(e => e.QuantityPerUnit)
+                    .HasColumnName("quantity_per_unit")
+                    .HasMaxLength(20);
 
-                entity.Property(e => e.ReorderLevel).HasDefaultValueSql("(0)");
+                entity.Property(e => e.ReorderLevel).HasColumnName("reorder_level");
 
-                entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
+                entity.Property(e => e.SupplierId).HasColumnName("supplier_id");
 
-                entity.Property(e => e.UnitPrice)
-                    .HasColumnType("money")
-                    .HasDefaultValueSql("(0)");
+                entity.Property(e => e.UnitPrice).HasColumnName("unit_price");
 
-                entity.Property(e => e.UnitsInStock).HasDefaultValueSql("(0)");
+                entity.Property(e => e.UnitsInStock).HasColumnName("units_in_stock");
 
-                entity.Property(e => e.UnitsOnOrder).HasDefaultValueSql("(0)");
+                entity.Property(e => e.UnitsOnOrder).HasColumnName("units_on_order");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK_Products_Categories");
+                    .HasConstraintName("fk_products_categories");
 
                 entity.HasOne(d => d.Supplier)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.SupplierId)
-                    .HasConstraintName("FK_Products_Suppliers");
+                    .HasConstraintName("fk_products_suppliers");
             });
 
             modelBuilder.Entity<Region>(entity =>
             {
-                entity.HasKey(e => e.RegionId)
-                    .ForSqlServerIsClustered(false);
+                entity.ToTable("region");
 
                 entity.Property(e => e.RegionId)
-                    .HasColumnName("RegionID")
+                    .HasColumnName("region_id")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.RegionDescription)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasColumnName("region_description")
+                    .HasColumnType("char");
             });
 
-            modelBuilder.Entity<Shippers>(entity =>
+            modelBuilder.Entity<Shipper>(entity =>
             {
-                entity.HasKey(e => e.ShipperId);
+                entity.HasKey(e => e.ShipperId)
+                    .HasName("pk_shippers");
 
-                entity.Property(e => e.ShipperId).HasColumnName("ShipperID");
+                entity.ToTable("shippers");
 
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.Phone).HasMaxLength(24);
-            });
-
-            modelBuilder.Entity<Suppliers>(entity =>
-            {
-                entity.HasKey(e => e.SupplierId);
-
-                entity.HasIndex(e => e.CompanyName)
-                    .HasName("CompanyName");
-
-                entity.HasIndex(e => e.PostalCode)
-                    .HasName("PostalCode");
-
-                entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
-
-                entity.Property(e => e.Address).HasMaxLength(60);
-
-                entity.Property(e => e.City).HasMaxLength(15);
-
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.ContactName).HasMaxLength(30);
-
-                entity.Property(e => e.ContactTitle).HasMaxLength(30);
-
-                entity.Property(e => e.Country).HasMaxLength(15);
-
-                entity.Property(e => e.Fax).HasMaxLength(24);
-
-                entity.Property(e => e.HomePage).HasColumnType("ntext");
-
-                entity.Property(e => e.Phone).HasMaxLength(24);
-
-                entity.Property(e => e.PostalCode).HasMaxLength(10);
-
-                entity.Property(e => e.Region).HasMaxLength(15);
-            });
-
-            modelBuilder.Entity<Territories>(entity =>
-            {
-                entity.HasKey(e => e.TerritoryId)
-                    .ForSqlServerIsClustered(false);
-
-                entity.Property(e => e.TerritoryId)
-                    .HasColumnName("TerritoryID")
-                    .HasMaxLength(20)
+                entity.Property(e => e.ShipperId)
+                    .HasColumnName("shipper_id")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.RegionId).HasColumnName("RegionID");
+                entity.Property(e => e.CompanyName)
+                    .IsRequired()
+                    .HasColumnName("company_name")
+                    .HasMaxLength(40);
+
+                entity.Property(e => e.Phone)
+                    .HasColumnName("phone")
+                    .HasMaxLength(24);
+            });
+
+            modelBuilder.Entity<Supplier>(entity =>
+            {
+                entity.HasKey(e => e.SupplierId)
+                    .HasName("pk_suppliers");
+
+                entity.ToTable("suppliers");
+
+                entity.Property(e => e.SupplierId)
+                    .HasColumnName("supplier_id")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Address)
+                    .HasColumnName("address")
+                    .HasMaxLength(60);
+
+                entity.Property(e => e.City)
+                    .HasColumnName("city")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.CompanyName)
+                    .IsRequired()
+                    .HasColumnName("company_name")
+                    .HasMaxLength(40);
+
+                entity.Property(e => e.ContactName)
+                    .HasColumnName("contact_name")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.ContactTitle)
+                    .HasColumnName("contact_title")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.Country)
+                    .HasColumnName("country")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Fax)
+                    .HasColumnName("fax")
+                    .HasMaxLength(24);
+
+                entity.Property(e => e.Homepage).HasColumnName("homepage");
+
+                entity.Property(e => e.Phone)
+                    .HasColumnName("phone")
+                    .HasMaxLength(24);
+
+                entity.Property(e => e.PostalCode)
+                    .HasColumnName("postal_code")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.Region)
+                    .HasColumnName("region")
+                    .HasMaxLength(15);
+            });
+
+            modelBuilder.Entity<Territory>(entity =>
+            {
+                entity.HasKey(e => e.TerritoryId)
+                    .HasName("pk_territories");
+
+                entity.ToTable("territories");
+
+                entity.Property(e => e.TerritoryId)
+                    .HasColumnName("territory_id")
+                    .HasMaxLength(20);
+
+                entity.Property(e => e.RegionId).HasColumnName("region_id");
 
                 entity.Property(e => e.TerritoryDescription)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasColumnName("territory_description")
+                    .HasColumnType("char");
 
                 entity.HasOne(d => d.Region)
                     .WithMany(p => p.Territories)
                     .HasForeignKey(d => d.RegionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Territories_Region");
+                    .HasConstraintName("fk_territories_region");
             });
+
+            modelBuilder.Entity<UsState>(entity =>
+            {
+                entity.HasKey(e => e.StateId)
+                    .HasName("pk_usstates");
+
+                entity.ToTable("us_states");
+
+                entity.Property(e => e.StateId)
+                    .HasColumnName("state_id")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.StateAbbr)
+                    .HasColumnName("state_abbr")
+                    .HasMaxLength(2);
+
+                entity.Property(e => e.StateName)
+                    .HasColumnName("state_name")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.StateRegion)
+                    .HasColumnName("state_region")
+                    .HasMaxLength(50);
+            });
+
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ABTS.DAL.Concrete.EF
 {
-    public class SupplierDAL : EFBaseDAL<Suppliers>,ISupplierDAL
+    public class SupplierDAL : EFBaseDAL<Supplier>,ISupplierDAL
     {
         private readonly NorthwindContext _context;
         public SupplierDAL(NorthwindContext context) :base(context)
