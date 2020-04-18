@@ -6,6 +6,6 @@ namespace ABTS.ElasticService.Abstract
 {
     public interface IElasticSearchService
     {
-        Task<bool> CreateAllIndexes(List<Products> productList, List<Categories> categoryList, List<Suppliers> supplierList);
+        Task<bool> CreateAllIndexes(List<Product> productList, List<Category> categoryList, List<Supplier> supplierList);
     }
 }

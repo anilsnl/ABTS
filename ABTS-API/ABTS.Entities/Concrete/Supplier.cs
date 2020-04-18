@@ -1,16 +1,17 @@
 ﻿using ABTS.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 
 namespace ABTS.Entities.Concrete
 {
-    public partial class Suppliers: IEntity
+    public partial class Supplier: IEntity
     {
-        public Suppliers()
+        public Supplier()
         {
-            Products = new HashSet<Products>();
+            Products = new HashSet<Product>();
         }
 
-        public int SupplierId { get; set; }
+        public short SupplierId { get; set; }
         public string CompanyName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
@@ -21,8 +22,8 @@ namespace ABTS.Entities.Concrete
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-        public string HomePage { get; set; }
+        public string Homepage { get; set; }
 
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

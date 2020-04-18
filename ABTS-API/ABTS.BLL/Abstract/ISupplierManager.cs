@@ -10,12 +10,12 @@ namespace ABTS.BLL.Abstract
 {
     public interface ISupplierManager
     {
-        Task<bool> AddAsync(Suppliers entity);
-        Task<bool> DeleteAsync(Suppliers entity);
-        Task<bool> UpdateAsync(Suppliers entity);
-        Task<Suppliers> UpdateAndGetAsync(Suppliers entity);
-        Task<Suppliers> GetAsync(Expression<Func<Suppliers, bool>> expression);
-        Task<IQueryable<Suppliers>> GetListAsync(Expression<Func<Suppliers, bool>> expression = null);
+        Task<bool> AddAsync(Supplier entity);
+        Task<bool> DeleteAsync(Supplier entity);
+        Task<bool> UpdateAsync(Supplier entity);
+        Task<Supplier> UpdateAndGetAsync(Supplier entity);
+        Task<Supplier> GetAsync(Expression<Func<Supplier, bool>> expression);
+        Task<IQueryable<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null);
 
     }
 }

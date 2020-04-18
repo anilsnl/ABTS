@@ -1,14 +1,15 @@
 ﻿using ABTS.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 
 namespace ABTS.Entities.Concrete
 {
-    public partial class Customers: IEntity
+    public partial class Customer : IEntity
     {
-        public Customers()
+        public Customer()
         {
             CustomerCustomerDemo = new HashSet<CustomerCustomerDemo>();
-            Orders = new HashSet<Orders>();
+            Orders = new HashSet<Order>();
         }
 
         public string CustomerId { get; set; }
@@ -24,6 +25,6 @@ namespace ABTS.Entities.Concrete
         public string Fax { get; set; }
 
         public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
