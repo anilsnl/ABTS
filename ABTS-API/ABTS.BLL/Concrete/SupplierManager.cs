@@ -16,32 +16,32 @@ namespace ABTS.BLL.Concrete
         {
             this._supplierDal = _supplierDal;
         }
-        public async Task<bool> AddAsync(Suppliers entity)
+        public async Task<bool> AddAsync(Supplier entity)
         {
             return await _supplierDal.AddAsync(entity);
         }
 
-        public async Task<bool> DeleteAsync(Suppliers entity)
+        public async Task<bool> DeleteAsync(Supplier entity)
         {
             return await _supplierDal.DeleteAsync(entity);
         }
 
-        public async Task<Suppliers> GetAsync(Expression<Func<Suppliers, bool>> expression)
+        public async Task<Supplier> GetAsync(Expression<Func<Supplier, bool>> expression)
         {
             return await _supplierDal.GetAsync(expression);
         }
 
-        public async Task<IQueryable<Suppliers>> GetListAsync(Expression<Func<Suppliers, bool>> expression = null)
+        public async Task<IQueryable<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null)
         {
             return await _supplierDal.GetListAsync(expression);
         }
 
-        public async Task<Suppliers> UpdateAndGetAsync(Suppliers entity)
+        public async Task<Supplier> UpdateAndGetAsync(Supplier entity)
         {
             return await _supplierDal.UpdateAndGetAsync(entity);
         }
 
-        public async Task<bool> UpdateAsync(Suppliers entity)
+        public async Task<bool> UpdateAsync(Supplier entity)
         {
             return await _supplierDal.UpdateAsync(entity);
         }

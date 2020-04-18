@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{32
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.ElasticService", "ABTS.Services\ABTS.ElasticService\ABTS.ElasticService.csproj", "{1B34A9AF-409E-49DA-B8CC-981204AD9B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.RedisService", "ABTS.Services\ABTS.RedisService\ABTS.RedisService.csproj", "{4FD8F828-7916-45C0-977E-9D3F874CADE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.RedisService", "ABTS.Services\ABTS.RedisService\ABTS.RedisService.csproj", "{4FD8F828-7916-45C0-977E-9D3F874CADE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.HangfireService", "ABTS.Services\ABTS.HangfireService\ABTS.HangfireService.csproj", "{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{4FD8F828-7916-45C0-977E-9D3F874CADE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FD8F828-7916-45C0-977E-9D3F874CADE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FD8F828-7916-45C0-977E-9D3F874CADE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1B34A9AF-409E-49DA-B8CC-981204AD9B2C} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
 		{4FD8F828-7916-45C0-977E-9D3F874CADE6} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
+		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12C66648-1C20-4F4A-932E-832DEA06C871}

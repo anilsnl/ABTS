@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c3fe64cc-60e5-44a1-a87f-b5b331f2ab28</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.7.11" />
+    <PackageReference Include="Hangfire.Redis.StackExchange" Version="1.8.1" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.7.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ABTS.DAL\ABTS.DAL.csproj" />
+    <ProjectReference Include="..\ABTS.ElasticService\ABTS.ElasticService.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -10,7 +10,7 @@ namespace ABTS.DAL.IOC
     {
         public static void RegisterDataAccess(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<NorthwindContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("MSSQL")));
+            services.AddDbContext<NorthwindContext>(opt => opt.UseNpgsql(configuration.GetConnectionString("Postgres")));
             services.AddScoped<IProductDAL, ProductDAL>();
             services.AddScoped<ICategoryDAL, CategoryDAL>();
             services.AddScoped<ISupplierDAL, SupplierDAL>();

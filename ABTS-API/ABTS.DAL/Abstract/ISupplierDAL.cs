@@ -2,7 +2,7 @@
 
 namespace ABTS.DAL.Abstract
 {
-    public interface ISupplierDAL:IBaseDAL<Suppliers>
+    public interface ISupplierDAL:IBaseDAL<Supplier>
     {
 
     }
