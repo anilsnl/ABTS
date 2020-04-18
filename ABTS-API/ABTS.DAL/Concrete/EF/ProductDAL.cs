@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ABTS.DAL.Concrete.EF
 {
-    public class ProductDAL : EFBaseDAL<Products>,IProductDAL
+    public class ProductDAL : EFBaseDAL<Product>,IProductDAL
     {
         private readonly NorthwindContext _context;
         public ProductDAL(NorthwindContext context) : base(context)
@@ -16,7 +16,7 @@ namespace ABTS.DAL.Concrete.EF
             _context = context;
         }
 
-        public IQueryable<Products> GetProductList(string columnName=null,int page = 1, int pageSize = 0,bool isDesc=false)
+        public IQueryable<Product> GetProductList(string columnName=null,int page = 1, int pageSize = 0,bool isDesc=false)
         {
             pageSize = pageSize < 1 ? _context.Products.Count() : pageSize;
             page = page < 1 ? 1 : page;

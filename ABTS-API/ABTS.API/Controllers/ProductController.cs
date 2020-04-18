@@ -26,14 +26,14 @@ namespace ABTS.API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpGet("GetProductList")]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProductList([FromQuery]ProductListModel model)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductList([FromQuery]ProductListModel model)
         {
-            List<Products> response = await _productManager.GetProductList(columnName: model.columnName, page: model.page, pageSize: model.pageSize, isDesc: model.isDesc).ToListAsync();
+            List<Product> response = await _productManager.GetProductList(columnName: model.columnName, page: model.page, pageSize: model.pageSize, isDesc: model.isDesc).ToListAsync();
             return Ok(response);
         }
 
         [HttpGet("GetProduct")]
-        public async Task<ActionResult<Products>> GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var response = await _productManager.GetAsync(a => a.ProductId == id);
             if (response == null)

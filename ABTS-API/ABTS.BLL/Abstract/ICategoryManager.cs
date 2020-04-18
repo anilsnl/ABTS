@@ -10,11 +10,11 @@ namespace ABTS.BLL.Abstract
 {
     public interface ICategoryManager
     {
-        Task<bool> AddAsync(Categories entity);
-        Task<bool> DeleteAsync(Categories entity);
-        Task<bool> UpdateAsync(Categories entity);
-        Task<Categories> UpdateAndGetAsync(Categories entity);
-        Task<Categories> GetAsync(Expression<Func<Categories, bool>> expression);
-        Task<IQueryable<Categories>> GetListAsync(Expression<Func<Categories, bool>> expression = null);
+        Task<bool> AddAsync(Category entity);
+        Task<bool> DeleteAsync(Category entity);
+        Task<bool> UpdateAsync(Category entity);
+        Task<Category> UpdateAndGetAsync(Category entity);
+        Task<Category> GetAsync(Expression<Func<Category, bool>> expression);
+        Task<IQueryable<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ABTS.DAL.Abstract
 {
-    public interface ICategoryDAL:IBaseDAL<Categories>
+    public interface ICategoryDAL:IBaseDAL<Category>
     {
 
     }

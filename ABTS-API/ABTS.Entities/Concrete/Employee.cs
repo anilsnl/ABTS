@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 namespace ABTS.Entities.Concrete
 {
-    public partial class Employees: IEntity
+    public partial class Employee : IEntity
     {
-        public Employees()
+        public Employee()
         {
-            EmployeeTerritories = new HashSet<EmployeeTerritories>();
-            InverseReportsToNavigation = new HashSet<Employees>();
-            Orders = new HashSet<Orders>();
+            EmployeeTerritories = new HashSet<EmployeeTerritorie>();
+            InverseReportsToNavigation = new HashSet<Employee>();
+            Orders = new HashSet<Order>();
         }
 
-        public int EmployeeId { get; set; }
+        public short EmployeeId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Title { get; set; }
@@ -29,12 +29,12 @@ namespace ABTS.Entities.Concrete
         public string Extension { get; set; }
         public byte[] Photo { get; set; }
         public string Notes { get; set; }
-        public int? ReportsTo { get; set; }
+        public short? ReportsTo { get; set; }
         public string PhotoPath { get; set; }
 
-        public virtual Employees ReportsToNavigation { get; set; }
-        public virtual ICollection<EmployeeTerritories> EmployeeTerritories { get; set; }
-        public virtual ICollection<Employees> InverseReportsToNavigation { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual Employee ReportsToNavigation { get; set; }
+        public virtual ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; }
+        public virtual ICollection<Employee> InverseReportsToNavigation { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
