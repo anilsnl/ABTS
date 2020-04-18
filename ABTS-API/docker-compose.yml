@@ -4,6 +4,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
     container_name: dev-elastic
+    restart: always
     environment:
       - discovery.type=single-node
     ports:
@@ -11,20 +12,24 @@ services:
       - 9300:9300
   kibana:
     image: docker.elastic.co/kibana/kibana:7.6.2
+    restart: always
     container_name: dev-kibana
+    depends_on: elasticsearch
     ports:
       - 5601:5601
   redis:
     image: redis
+    restart: always
     container_name: dev-redis
     ports:
       - 6379:6379
-  db:
-    image: postgres:12
-      environment:
-        POSTGRES_DB: northwind
-        POSTGRES_USER: northwind_user
-        POSTGRES_PASSWORD: 5252
+  postgres_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: northwind
+      POSTGRES_USER: northwind_user
+      POSTGRES_PASSWORD: 5252
     ports: 
       - 5432:5432
     volumes:
