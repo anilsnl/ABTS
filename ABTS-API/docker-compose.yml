@@ -48,14 +48,14 @@ services:
       - postgres_db
       - redis
       - elastic
-    abts_batchsservice:
-      build:
-        context: .
-        dockerfile: HangfireService_Dockerfile
-      container_name: abts-api
-      ports: 
-        - 88:80
-      depends_on: 
-        - postgres_db
-        - redis
-        - elastic
+  abts_batchsservice:
+    build:
+      context: .
+      dockerfile: HangfireService_Dockerfile
+    container_name: abts-api
+    ports: 
+      - 88:80
+    depends_on: 
+      - postgres_db
+      - redis
+      - elastic
