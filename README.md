@@ -17,7 +17,7 @@ Project inclued docker-compose support. Docker-compose ups to the folwwoing cont
   3. Kibana 7
   4. Redis
   5. ASP.NET Core API
-  6. Pgadmin
+  6. Adminer
 
 Just use the following commands to up it.
 
@@ -30,7 +30,8 @@ It's done :) Happy coding.
   go -> http://localhost/swagger for API swagger UI
   go -> http://localhost:5601 for Kibana UI
   go -> http://localhost:88 for Hangfire UI
-
+  go -> http://localhost:8080 for Adminer DB Management tool UI.
+  
 To contact Postgres use.
   -host: localhost
   -user: northwind_user

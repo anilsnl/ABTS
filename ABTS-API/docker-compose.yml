@@ -37,6 +37,12 @@ services:
     volumes:
       - ./dbdata:/var/lib/postgresql/data
       - ./northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
+  adminer:
+    image: adminer
+    container_name: dev-adminer
+    restart: always
+    ports:
+      - 8080:8080
   abts_api:
     build:
       context: .
