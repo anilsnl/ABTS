@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ABTS.API.Models;
+﻿using ABTS.API.Models;
 using ABTS.BLL.Abstract;
 using ABTS.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ABTS.API.Controllers.v2
 {

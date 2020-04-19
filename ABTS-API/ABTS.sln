@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.HangfireService", "ABT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.Core", "ABTS.Core\ABTS.Core.csproj", "{AC9E4E9F-9E87-403B-B756-D3432432BF07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.CitizenshipVerificationService", "ABTS.Services\ABTS.CitizenshipVerificationService\ABTS.CitizenshipVerificationService.csproj", "{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{1B34A9AF-409E-49DA-B8CC-981204AD9B2C} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
 		{4FD8F828-7916-45C0-977E-9D3F874CADE6} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
 		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
+		{E7B7F4E9-0A92-48BA-9E6D-0BCE01CE08D3} = {32A2FFC0-5378-4191-8899-2A4B15F06C2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12C66648-1C20-4F4A-932E-832DEA06C871}
