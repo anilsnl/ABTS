@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.ElasticService", "ABTS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.RedisService", "ABTS.Services\ABTS.RedisService\ABTS.RedisService.csproj", "{4FD8F828-7916-45C0-977E-9D3F874CADE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.HangfireService", "ABTS.Services\ABTS.HangfireService\ABTS.HangfireService.csproj", "{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABTS.HangfireService", "ABTS.Services\ABTS.HangfireService\ABTS.HangfireService.csproj", "{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABTS.Core", "ABTS.Core\ABTS.Core.csproj", "{AC9E4E9F-9E87-403B-B756-D3432432BF07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D51F6E7E-1E06-4FB6-9E2A-1C3D5A90C752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9E4E9F-9E87-403B-B756-D3432432BF07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

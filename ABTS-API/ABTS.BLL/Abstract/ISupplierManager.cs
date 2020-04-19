@@ -15,7 +15,7 @@ namespace ABTS.BLL.Abstract
         Task<bool> UpdateAsync(Supplier entity);
         Task<Supplier> UpdateAndGetAsync(Supplier entity);
         Task<Supplier> GetAsync(Expression<Func<Supplier, bool>> expression);
-        Task<IQueryable<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null);
+        Task<List<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null);
 
     }
 }

@@ -1,13 +1,11 @@
-﻿using ABTS.Entities.Abstract;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ABTS.DAL.Abstract
+namespace ABTS.Core.DAL.Abstract
 {
-    public interface IBaseDAL<T> where T: class,IEntity, new()
+    public interface IGnericRepository<T> where T: class,IEntity, new()
     {
         Task<bool> AddAsync(T entity);
         Task<bool> DeleteAsync(T entity);

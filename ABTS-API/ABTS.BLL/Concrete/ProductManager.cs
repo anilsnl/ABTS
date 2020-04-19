@@ -48,9 +48,9 @@ namespace ABTS.BLL.Concrete
             throw new NotImplementedException();
         }
 
-        public async Task<IQueryable<Product>> GetListAsync(Expression<Func<Product, bool>> expression = null)
+        public async Task<List<Product>> GetListAsync(Expression<Func<Product, bool>> expression = null)
         {
-            return await _productDal.GetListAsync(expression);
+            return await (await _productDal.GetListAsync(expression)).ToListAsync();
         }
 
         public IQueryable<Product> GetProductList(string columnName = null, int page = 1, int pageSize = 0, bool isDesc = false)

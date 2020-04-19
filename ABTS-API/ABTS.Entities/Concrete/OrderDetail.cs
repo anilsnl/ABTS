@@ -1,6 +1,4 @@
-﻿using ABTS.Entities.Abstract;
-using System;
-using System.Collections.Generic;
+﻿using ABTS.Core.DAL.Abstract;
 
 namespace ABTS.Entities.Concrete
 {

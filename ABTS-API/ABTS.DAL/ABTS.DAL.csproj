@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ABTS.Core\ABTS.Core.csproj" />
     <ProjectReference Include="..\ABTS.Entities\ABTS.Entities.csproj" />
   </ItemGroup>
 

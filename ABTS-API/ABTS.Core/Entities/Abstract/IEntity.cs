@@ -1,4 +1,4 @@
-﻿namespace ABTS.Entities.Abstract
+﻿namespace ABTS.Core.DAL.Abstract
 {
     public interface IEntity
     {

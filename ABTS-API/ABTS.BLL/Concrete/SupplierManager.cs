@@ -1,6 +1,7 @@
 ﻿using ABTS.BLL.Abstract;
 using ABTS.DAL.Abstract;
 using ABTS.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ABTS.BLL.Concrete
 {
-    public class SupplierManager:ISupplierManager
+    public class SupplierManager : ISupplierManager
     {
         private readonly ISupplierDAL _supplierDal;
         public SupplierManager(ISupplierDAL _supplierDal)
@@ -31,9 +32,9 @@ namespace ABTS.BLL.Concrete
             return await _supplierDal.GetAsync(expression);
         }
 
-        public async Task<IQueryable<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null)
+        public async Task<List<Supplier>> GetListAsync(Expression<Func<Supplier, bool>> expression = null)
         {
-            return await _supplierDal.GetListAsync(expression);
+            return await (await _supplierDal.GetListAsync(expression)).ToListAsync();
         }
 
         public async Task<Supplier> UpdateAndGetAsync(Supplier entity)

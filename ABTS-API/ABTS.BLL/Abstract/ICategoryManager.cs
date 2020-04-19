@@ -15,6 +15,6 @@ namespace ABTS.BLL.Abstract
         Task<bool> UpdateAsync(Category entity);
         Task<Category> UpdateAndGetAsync(Category entity);
         Task<Category> GetAsync(Expression<Func<Category, bool>> expression);
-        Task<IQueryable<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null);
+        Task<List<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null);
     }
 }

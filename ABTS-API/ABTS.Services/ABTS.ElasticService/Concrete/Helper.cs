@@ -1,6 +1,4 @@
 ﻿using ABTS.ElasticService.Schema;
-using ABTS.Entities.Abstract;
-using ABTS.Entities.Concrete;
 using Nest;
 using System;
 using System.Collections.Generic;

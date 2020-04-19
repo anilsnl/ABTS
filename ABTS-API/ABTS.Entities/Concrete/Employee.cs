@@ -1,4 +1,4 @@
-﻿using ABTS.Entities.Abstract;
+﻿using ABTS.Core.DAL.Abstract;
 using System;
 using System.Collections.Generic;
 

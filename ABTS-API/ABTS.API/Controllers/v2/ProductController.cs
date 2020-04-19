@@ -8,7 +8,7 @@ using ABTS.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace ABTS.API.Controllers
+namespace ABTS.API.Controllers.v2
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("2.0")]
@@ -25,15 +25,15 @@ namespace ABTS.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpGet("GetProductList")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductList([FromQuery]ProductListModel model)
+        [HttpGet("GetWithPagination")]
+        public async Task<ActionResult> GetWithPagination([FromQuery]ProductListModel model)
         {
             List<Product> response = await _productManager.GetProductList(columnName: model.columnName, page: model.page, pageSize: model.pageSize, isDesc: model.isDesc).ToListAsync();
             return Ok(response);
         }
 
-        [HttpGet("GetProduct")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        [HttpGet("Get")]
+        public async Task<ActionResult> Get(int id)
         {
             var response = await _productManager.GetAsync(a => a.ProductId == id);
             if (response == null)
@@ -45,8 +45,8 @@ namespace ABTS.API.Controllers
                 return Ok(response);
             }
         }
-        [HttpPost("PostProduct")]
-        public async Task<IActionResult> PostProduct([FromBody]Product product)
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody]Product product)
         {
             var data = await _productManager.AddAsync(product);
             if (data)
@@ -58,8 +58,8 @@ namespace ABTS.API.Controllers
                 return BadRequest("Product could not be added.");
             }
         }
-        [HttpPut("PutProduct")]
-        public async Task<IActionResult> PuttProduct([FromBody]Product product)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody]Product product)
         {
             var data = await _productManager.UpdateAndGetAsync(product);
             if (data != null)
@@ -71,8 +71,8 @@ namespace ABTS.API.Controllers
                 return BadRequest("Product could not be added.");
             }
         }
-        [HttpDelete("DeleteProduct")]
-        public async Task<IActionResult> DeleteProduct([FromBody]int id)
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody]int id)
         {
             var data = await _productManager.DeleteAsync(new Product { ProductId = (short)id});
             if (data)

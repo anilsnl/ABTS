@@ -1,6 +1,7 @@
 ﻿using ABTS.BLL.Abstract;
 using ABTS.DAL.Abstract;
 using ABTS.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,9 @@ namespace ABTS.BLL.Concrete
             return await _categoryDal.GetAsync(expression);
         }
 
-        public async Task<IQueryable<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null)
+        public async Task<List<Category>> GetListAsync(Expression<Func<Category, bool>> expression = null)
         {
-            return await _categoryDal.GetListAsync(expression);
+            return await (await _categoryDal.GetListAsync(expression)).ToListAsync();
         }
 
         public async Task<Category> UpdateAndGetAsync(Category entity)

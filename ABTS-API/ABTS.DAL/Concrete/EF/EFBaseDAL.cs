@@ -1,15 +1,13 @@
-﻿using ABTS.DAL.Abstract;
-using ABTS.Entities.Abstract;
+﻿using ABTS.Core.DAL.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ABTS.DAL.Concrete.EF
 {
-    public abstract class EFBaseDAL<TEntity> : IBaseDAL<TEntity> where TEntity : class, IEntity, new()
+    public abstract class EFBaseDAL<TEntity> : IGnericRepository<TEntity> where TEntity : class, IEntity, new()
     {
         NorthwindContext _context;
 

@@ -18,4 +18,8 @@
     <Folder Include="Complex\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ABTS.Core\ABTS.Core.csproj" />
+  </ItemGroup>
+
 </Project>
