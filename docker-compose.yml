@@ -43,6 +43,8 @@ services:
     restart: always
     ports:
       - 8080:8080
+    depends_on: 
+      - postgres_db
   abts_api:
     build:
       context: .
